@@ -1,0 +1,8 @@
+queue:
+- name: poll
+  rate: 1.0/m
+  bucket_size: 1
+
+- name: email
+  rate: 5/m
+  bucket_size: 1

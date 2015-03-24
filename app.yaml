@@ -1,0 +1,21 @@
+application: gnds-notifier
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: no
+
+handlers:
+- url: /worker.*
+  script: src.worker.app
+  login: admin
+
+- url: .*
+  script: src.main.app
+
+libraries:
+- name: webapp2
+  version: latest
+
+- name: jinja2
+  version: latest
+

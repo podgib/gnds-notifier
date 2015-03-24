@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>G&D's Flavour Notifier</title>
+</head>
+<body>
+<h1>G&D's Flavour Notifier</h1>
+<p>Enter your email address and a flavour to be notified whenever the flavour is available at G&D's.
+You can visit this page several times to subscribe to several flavours - you will only get a maximum of one email per day.</p>
+<form method="POST" action="/subscribe">
+    <label for="email">Email Address: </label><input type="email" name="email" id="email" placeholder="you@somewhere.com">
+    <label for="flavour">Flavour (one only): </label><input type="text" name="flavour" id="flavour" placeholder="Pistachio">
+    <input type="submit" name="subscribe" value="Subscribe">
+</form>
+<p>Note: this site has no affiliation with G&D's.</p>
+<p>To contact me, email <a href="mailto:pascoeg@gmail.com">pascoeg@gmail.com</a></p>
+<p>Code on <a href="http://github.com/podgib/gnds-notifier">github</a>.</p>
+</body>
+</html>

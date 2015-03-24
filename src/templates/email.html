@@ -1,0 +1,19 @@
+Good News! Some of your favourite flavours are available at G&D's today!
+{% if davis %}
+George and Davis (Little Clarendon):
+    {% for f in davis -%}
+    - {{f}}
+    {%- endfor -%}
+{%- endif %}
+{% if danver %}
+George and Danver (St Aldates):
+    {% for f in danver -%}
+    - {{f}}
+    {%- endfor -%}
+{%- endif %}
+{% if delila %}
+George and Delila (Cowley):
+    {% for f in delila -%}
+    - {{f}}
+    {%- endfor -%}
+{%- endif %}

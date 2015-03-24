@@ -72,11 +72,11 @@ class FlavourParser(HTMLParser):
         if self.shop == Shop.NONE:
           logging.error('Found a flavour without a shop :(')
         elif self.shop == Shop.DANVER:
-          self.danver_flavours.append(self.current_flavour)
+          self.danver_flavours.append(self.current_flavour.strip().lower())
         elif self.shop == Shop.DAVIS:
-          self.davis_flavours.append(self.current_flavour)
+          self.davis_flavours.append(self.current_flavour.strip().lower())
         elif self.shop == Shop.DELILA:
-          self.delila_flavours.append(self.current_flavour)
+          self.delila_flavours.append(self.current_flavour.strip().lower())
         self.current_flavour = None
         self.state = State.FLAVOURS
       elif self.state == State.BOTTOM:
