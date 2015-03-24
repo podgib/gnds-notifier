@@ -7,16 +7,17 @@ class Scraper:
   def scrape(self, url):
     try:
       result = urllib2.urlopen(url)
-      html = ''
-      for line in result:
-        html = html + line
-      parser = FlavourParser()
-      parser.feed(html)
-      self.danver_flavours = parser.danver_flavours
-      self.davis_flavours = parser.davis_flavours
-      self.delila_flavours = parser.delila_flavours
     except:
       logging.error("Could not fetch url")
+
+    html = ''
+    for line in result:
+      html = html + line
+    parser = FlavourParser()
+    parser.feed(html)
+    self.danver_flavours = parser.danver_flavours
+    self.davis_flavours = parser.davis_flavours
+    self.delila_flavours = parser.delila_flavours
 
 if __name__ == "__main__":
   url = "http://www.gdcafe.com/website/index.php/Flavours"
