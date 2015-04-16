@@ -15,7 +15,6 @@ class ScrapeHandler(webapp2.RequestHandler):
 
   def post(self):
     logging.info('Running ScrapeHandler')
-    taskqueue.add(url='/worker/scrape', countdown=86400)
     scraper = Scraper()
     scraper.scrape("http://www.gdcafe.com/website/index.php/Flavours")
     subscribers = Subscriber.all().run()
@@ -38,6 +37,7 @@ class ScrapeHandler(webapp2.RequestHandler):
       taskqueue.add(url='/worker/email', params=params, queue_name='email', countdown=0)
       logging.info('Submitted task to email ' + s.email)
 
+    taskqueue.add(url='/worker/scrape', countdown=86400)
     logging.info('Finished ScrapeHandler')
 
 class EmailHandler(webapp2.RequestHandler):
